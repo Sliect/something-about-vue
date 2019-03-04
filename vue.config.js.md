@@ -59,7 +59,6 @@ module.exports = {
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
       // mutate config for production...
-      config.devtool = false
     } else {
       // mutate for development...
     }
@@ -69,6 +68,11 @@ module.exports = {
       .set('pages', resolve('src/pages'))
       .set('assets', resolve('src/assets'))
 
+    config
+      .plugin('ProvidePlugin')
+      .use(require('webpack/lib/ProvidePlugin'), [{
+        '$': 'jquery'
+      }])
   },
   css: {
     // Default: false
