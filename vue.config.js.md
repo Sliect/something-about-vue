@@ -73,6 +73,24 @@ module.exports = {
       .use(require('webpack/lib/ProvidePlugin'), [{
         '$': 'jquery'
       }])
+
+    // px2rem-loader 配置插到postcss 之前
+    function generateLoader(loader) {
+      config.module
+        .rule(loader)
+        .oneOf('vue')
+        .use('px2rem-loader')
+        .loader('px2rem-loader')
+        .before('postcss-loader')
+        .options({
+          remUnit: 100,
+          remPrecision: 8
+        })
+        .end()
+    }
+
+    generateLoader('scss')
+    generateLoader('css')
   },
   css: {
     // Default: false
