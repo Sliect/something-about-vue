@@ -4,6 +4,8 @@
 
 - vue add @vue/eslint 命令后选择standard风格 可在package.json中的rules中开启/关闭指定规则
 
+- public 文件夹下的内容不经过webpack处理 打包后直接复制到指定的打包目录下 用来存放一些不变的静态资源或过大的打包文件
+
 > vue inspect > output.js 命令可查看开发环境webpack配置
 >
 > vue ui 启动的GUI上可通过inspect 下的运行查看生产环境webpack配置
