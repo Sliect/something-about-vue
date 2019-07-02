@@ -1,10 +1,33 @@
+- [utils.js](utils.js)
+
 - [vue.config.js vue-cli3 新项目简单配置](vue.config.js.md)
+
+- [sortablejs](https://github.com/SortableJS/Sortable)
+
+- [webpack相关](webpack.md)
+
+- [封装子组件 父子属性值通信方案](https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6)
+
+- tween库可以做到补间动画
 
 - flexible.min.js 移动端适配
 
 - vue add @vue/eslint 命令后选择standard风格 可在package.json中的rules中开启/关闭指定规则
 
 - public 文件夹下的内容不经过webpack处理 打包后直接复制到指定的打包目录下 用来存放一些不变的静态资源或过大的打包文件
+
+-
+  ``` js
+    <!-- 动态组件 tempalte -->
+    <component v-bind="linkProps(to)">
+    <!-- script -->
+    linkProps(url) {
+      return {
+        is: 'router-link',
+        to: url
+      }
+    }
+  ```
 
 > vue inspect > output.js 命令可查看开发环境webpack配置
 >
@@ -16,7 +39,17 @@
 >
 > 如何使用: 在入口文件引入flexible.min.js, npm i -D px2rem-loader, vue.config.js 中配置
 
-```
+> 拖拽用sortablejs, 主要用法 Sortable(el, options), 注意安装和引用的是sortablejs
+>
+> 其中options中主要用到 { sort: true, delay: 500, animation: 200 }
+>
+> sort表示开启拖拽 delay表示按住500毫秒之后可以拖拽 animation表示200毫秒的动画效果
+
+> el-scrollbar 元素尺寸改变，滑块的大小和位置有问题，需要等比改变滑块的大小并重新计算 transform
+>
+> [仓库地址](https://github.com/Sliect/element-bug-scrollbar)
+
+``` js
 /**
   * "off"或者0    //关闭规则关闭
   * "warn"或者1    //在打开的规则作为警告（不影响退出代码）
