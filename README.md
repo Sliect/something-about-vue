@@ -1,4 +1,13 @@
+<!--
+ * @Author: Sliect
+ * @Date: 2019-10-12 14:55:53
+ * @LastEditors: Sliect
+ * @LastEditTime: 2019-12-10 10:42:41
+ * @desc:
+ -->
 - [utils.js](utils.js)
+
+- [vue组件封装](vueComponent.md)
 
 - [vue.config.js vue-cli3 新项目简单配置](vue.config.js.md)
 
@@ -16,8 +25,7 @@
 
 - public 文件夹下的内容不经过webpack处理 打包后直接复制到指定的打包目录下 用来存放一些不变的静态资源或过大的打包文件
 
--
-  ``` js
+- ``` js
     <!-- 动态组件 tempalte -->
     <component v-bind="linkProps(to)">
     <!-- script -->
@@ -28,6 +36,8 @@
       }
     }
   ```
+
+- .env文件中 NODE_ENV, BASE_URL 和以 VUE_APP_ 开头的变量可以在vue-cli3项目中通过 process.env 访问
 
 > vue inspect > output.js 命令可查看开发环境webpack配置
 >
