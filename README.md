@@ -2,7 +2,7 @@
  * @Author: Sliect
  * @Date: 2019-10-12 14:55:53
  * @LastEditors: Sliect
- * @LastEditTime: 2019-12-10 10:42:41
+ * @LastEditTime: 2020-03-25 16:38:42
  * @desc:
  -->
 - [utils.js](utils.js)
@@ -18,6 +18,10 @@
 - [封装子组件 父子属性值通信方案](https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6)
 
 - tween库可以做到补间动画
+
+- nprogress 进度条
+
+- vue-ls localStorage封装
 
 - flexible.min.js 移动端适配
 
